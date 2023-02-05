@@ -1,0 +1,9 @@
+- hosts: masters
+  become: true
+  tasks:
+    - name: Clone Application Repo
+      shell: git clone https://github.com/microservices-demo/microservices-demo.git
+    - name: Deploy Application Repo
+      shell: kubectl create -f microservices-demo/deploy/kubernetes/complete-demo.yaml
+
+      
